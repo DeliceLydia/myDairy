@@ -1,0 +1,66 @@
+body {
+    background-image: url(../assets/pen.webp);
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 0;
+   margin: 0;
+   width: 100%;
+}
+.logo{
+    position: relative;
+    margin-top: 1%;
+    padding-left: 10px;
+    font-size: 170%;
+    padding-bottom: 5px;
+}
+.logo a{
+    float: left;
+    font-size: 100%;
+    text-decoration: none;
+    color: black;
+}
+.logo a span{
+    font-size: 150%;
+    color: green;
+}
+.sidebar {
+   position: absolute;
+   width: 13%;
+   height: 74vh;
+   background:  rgba(0,0 ,0 , 0.8);
+   padding-right: 20px;
+   margin-top: 53px;
+   padding: 10px;
+   left:0;
+   transition: 2s;
+    
+}
+.sidebar ul li a{
+  list-style: none;
+  color: #fff;
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 90%;
+}
+#inbox{
+    margin: 53px 20px 0 0;
+    height: 77vh;
+    width: 82%;
+    border-radius: 4px;
+    background-color: rgba(0,0 ,0 , 0.8);
+    float: right;
+    overflow: auto;
+  }
+td{
+    width: 10%; 
+    padding: 10px;
+    color: white;
+    border-bottom: 1px rgba(199, 199, 199, 0.4) solid;
+    cursor: pointer;
+}
+tr:hover{
+    background: rgba(112, 103, 103, 0.4);
+  }
