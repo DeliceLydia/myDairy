@@ -1,0 +1,79 @@
+body {
+    background-image: url(../assets/pen.webp);
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding: 0;
+   margin: 0;
+   width: 100%;
+}
+.logo{
+    position: relative;
+    margin-top: 1%;
+    padding-left: 10px;
+    font-size: 170%;
+    padding-bottom: 5px;
+}
+.logo a{
+    float: left;
+    font-size: 100%;
+    text-decoration: none;
+    color: black;
+}
+.logo a span{
+    font-size: 150%;
+    color: green;
+}
+.sidebar {
+    position: absolute; 
+    width: 13%;
+    height: 74vh;
+    background:  rgb(230, 226, 226);
+    padding-right: 20px;
+    margin-top: 53px;
+    padding: 10px;
+    left:0;
+    transition: 2s;
+     
+ }
+ .sidebar ul li a{
+   list-style: none;
+   color: black;
+   font-size: 20px;
+   padding: 5px;
+   margin-top: 10px;
+   cursor: pointer;
+   text-decoration: none;
+   width: 90%;
+ } 
+
+ #message form {
+    margin: 53px 20px 0 0;
+    height: 77vh;
+    width: 82%;
+    border-radius: 4px;
+    background-color: rgb(230, 226, 226);
+    float: right;
+    overflow: auto;
+  }
+  .form-input{
+    width: 90%;
+    color: white;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid rgb(9, 90, 56);
+    margin: auto;
+    background: transparent;
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 15pt;    
+    padding: 4px;
+  }
+  
+  #txt-msg{
+    color: black;
+    width: 90%;
+    height: 70%;
+    border-bottom: rgb(201, 216, 166) 2px solid;
+    resize: none;
+  }
+  
