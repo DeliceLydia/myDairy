@@ -23,6 +23,25 @@ body {
     font-size: 150%;
     color: green;
 }
+@media screen and (max-width: 760px) {
+    body{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding: 0;
+        margin: 0;
+      }
+    .sidebar{
+        width: 50%;
+        background: rgb(230, 226, 226) ;
+        height: 55vh;
+        margin-top: 40px;
+      }
+    #inbox{
+        width: 100%;
+        margin: auto;
+      }
+    }
 .sidebar {
    position: absolute;
    width: 13%;
@@ -54,12 +73,17 @@ body {
     float: right;
     overflow: auto;
   }
+thead{
+    font-weight: 700;
+    font-size: 15pt;
+    text-transform: uppercase;
+  }
 td{
     width: 10%; 
     font-size: 20px;
     padding: 10px;
     color: black;
-    border-bottom: 1px rgba(199, 199, 199, 0.4) solid;
+    border-bottom: 1px rgba(29, 26, 26, 0.4) solid;
     cursor: pointer;
 }
 td a {
@@ -78,4 +102,46 @@ td a {
         font-family: Arial, Helvetica, sans-serif;
         font-weight: bold;
         text-decoration: none;
+}
+/* New entry */
+#message form {
+  margin: 53px 30px 0 0;
+  height: 77vh;
+  width: 65%;
+  border-radius: 4px;
+  background-color: rgb(230, 226, 226);
+  float: right;
+  overflow: auto;
+  padding-left: 16%;
+}
+.form-input{
+  width: 90%;
+  color: black;
+  border: none;
+  outline: 0;
+  margin: auto;
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 18px;    
+  padding: 4px;
+}
+
+#txt-msg{
+  color: black;
+  width: 90%;
+  height: 70%;
+  border-bottom: rgb(201, 216, 166) 2px solid;
+  resize: none;
+}
+.btn-success{
+  background: rgb(187, 133, 112);
+  width: 20%;
+  border-radius: 5px;
+  height: 27px;
+  font-size: 15pt;
+  font-weight: 700;
+  outline: none;
+  border: solid 2px rgb(187, 133, 112);
+  float: right;
+  margin-right: 50px;
 }
