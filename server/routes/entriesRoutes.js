@@ -1,11 +1,12 @@
 import express from 'express';
-import getAll from '../controllers/getAllEntry';
-import getOneEntry from '../controllers/specificEntry';
+import entry from '../controllers/entriesController';
+
 
 const router = express.Router();
 
-router.get('/api/v1/entries', getAll);
-router.get('/api/v1/entries/:entryId', getOneEntry);
+router.get('/api/v1/entries', entry.getAll);
+router.get('/api/v1/entries/:entryId', entry.getOneEntry);
+router.post('/api/v1/entries', entry.addNewEntry);
 
 
 export default router;
