@@ -1,8 +1,12 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 import router from './routes/entriesRoutes';
+
 
 const app = express();
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 
 const PORT = 3000;
 
