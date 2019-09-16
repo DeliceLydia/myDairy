@@ -9,16 +9,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 
 const PORT = 3000;
-
-// app.use('/', (req, res) => {
-//     res.send({
-//       status: 200,
-//       message: 'Welcome to myDiary application ',
-//     });
-//   });
-
-app.use(router);
 app.use('/', router);
+app.get('/', (req, res) => {
+    res.send({
+      status: 200,
+      message: 'Welcome to myDiary application ',
+    });
+  });
+
 app.listen(PORT, ()=>{
     console.log(`server is running on PORT ${PORT}`);
  });
