@@ -4,7 +4,7 @@
   "description": "MyDiary is an online journal where users can pen down their thoughts and feelings.",
   "main": "server.js",
   "scripts": {
-    "dev-start":"nodemon --exec babel-node ./server/server.js",
+    "dev-start": "nodemon --exec babel-node ./server/server.js",
     "start": "nodemon --exec babel-node ./server/server.js",
     "test": "Mocha"
   },
@@ -26,6 +26,7 @@
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.6.1",
     "@babel/preset-env": "^7.6.0",
+    "dotenv": "^8.1.0",
     "express": "^4.17.1",
     "joi": "^14.3.1",
     "moment": "^2.24.0"
