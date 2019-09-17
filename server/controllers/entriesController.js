@@ -76,7 +76,7 @@ class entry {
     }
     if (checkEntryId) {
       checkEntryId.entry = req.body.entry;
-      return res.status(200).json({
+      return res.status(200).send({
         status: 200,
         message: 'entry updated successfully',
         data: {
@@ -86,6 +86,24 @@ class entry {
         }
       })
     }
+  }
+    static deleteEntry(req, res) {
+      const deleteOne = entries.find(d => d.entryId === parseInt(req.params.entryId, 10));
+    if(!deleteOne) {
+      return res.status(404).json ({
+        status : 404,
+        message : 'entry with that ID is not found',
+      });
+    }
+    if(deleteOne){
+      const index = entries.indexOf(deleteOne);
+      entries.splice(index, 1);
+      return res.status(200).json({
+      status : 200,
+      message : 'entry deleted successfully!'
+        });
+     }
+    
   }
 }
 export default entry;

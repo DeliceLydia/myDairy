@@ -1,14 +1,12 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import router from './routes/entriesRoutes';
 
 
 const app = express();
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
 
 
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 app.use('/', router);
 app.get('/', (req, res) => {
     res.send({
@@ -17,8 +15,6 @@ app.get('/', (req, res) => {
     });
   });
 
-app.listen(process.env.PORT, () => {
-    console.log(`server is running on PORT ${PORT}`);
- });
+app.listen(port, () => console.log(`server is running on PORT ${port}`));
 export default app;
  
