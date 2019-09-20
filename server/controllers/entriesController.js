@@ -43,11 +43,12 @@ class entry {
       });
     }
     const entryId = parseInt(entries.length + 1, 10);
+    const {title, newEntry} = req.body;
     const entry = {
       entryId,
       created_on: moment().format('LL'),
-      title: req.body.title,
-      newEntry: req.body.newEntry,
+      title,
+      newEntry,
     };
     entries.push(entry);
 
