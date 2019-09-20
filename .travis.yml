@@ -1,0 +1,13 @@
+language: node_js
+
+node_js: 
+  - node
+
+before_script:
+  - npm install
+
+after script:
+  - npm run coverage
+
+script:
+  - npm run test
