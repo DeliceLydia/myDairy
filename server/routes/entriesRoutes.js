@@ -8,5 +8,6 @@ router.get('/api/v1/entries', entry.getAll);
 router.get('/api/v1/entries/:entryId', entry.getOneEntry);
 router.post('/api/v1/entries', entry.addNewEntry);
 router.put('/api/v1/entries/:entryId', entry.modifyEntry);
+router.delete('/api/v1/entries/:entryId', entry.deleteEntry);
 
 export default router;
