@@ -72,7 +72,7 @@ class entry {
     if (!checkEntryId) {
       return res.status(404).json({
         status: 404,
-        message: 'entry with that entryId not found'
+        error: 'entry with that entryId not found'
       });
     }
     if (checkEntryId) {
@@ -93,7 +93,7 @@ class entry {
     if(!deleteOne) {
       return res.status(404).json ({
         status : 404,
-        message : 'entry with that ID is not found',
+        error : 'entry with that ID is not found',
       });
     }
     if(deleteOne){
