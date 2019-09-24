@@ -7,7 +7,7 @@ before_script:
   - npm install
 
 after script:
-  - npm run coverage
+  - npm run coveralls
 
 script:
   - npm run test
