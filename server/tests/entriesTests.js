@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 const myTestEntry = {
     title: 'Lydia learns tests',
-    entry: 'This is how I learned my tests'
+    newEntry: 'This is how I learned my tests'
 }
 
 describe('Entries tests', () => {
@@ -48,7 +48,7 @@ describe('Entries tests', () => {
     it('should not post when there is a validation mistake', (done) =>{
         const myTestEntry = {
             title: 10,
-            entry: 'This is how I learned my tests'
+            newEntry: 'This is how I learned my tests'
         } 
         chai.request(app)
         .post('/api/v1/entries')
@@ -78,7 +78,7 @@ describe('Entries tests', () => {
    })
    it('should be able to modify an entry', (done) => {
     const myTestEntry = {
-        entry: 'Testing is abit easier'
+        newEntry: 'Testing is abit easier'
     }
       chai.request(app)
       .put('/api/v1/entries/1')
@@ -94,7 +94,7 @@ describe('Entries tests', () => {
     })
     it('should not be able to modify an entry when id doesn\'t exist',(done) => {
         const myTestEntry = {
-            entry: 'Testing is abit easier'
+            newEntry: 'Testing is abit easier'
         }
         chai.request(app)
         .put('/api/v1/entries/9')
@@ -109,7 +109,7 @@ describe('Entries tests', () => {
     })
     it('should not able to modify an entry when there is a validation mistake', (done)=> {
         const myTestEntry = {
-            entry: 30
+            newEntry: 30
         }
         chai.request(app)
         .put('/api/v1/entries/1')
