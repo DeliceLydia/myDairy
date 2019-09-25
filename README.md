@@ -24,7 +24,7 @@ My Diary is an online journal where users can pen down their thoughts and feelin
 | /api/v1/entries| GET | Getting all entries|
 | /api/v1/entries/:id| GET | Getting an entry by ID |
 | /api/v1/entries/:id | DELETE | deleting a specific entry |
-| /api/v1/cars/:id | PUT| Get the user to modify an entry  |
+| /api/v1/entries/:id | PUT| Get the user to modify an entry  |
 
 ## Used Tools
 
