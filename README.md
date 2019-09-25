@@ -10,7 +10,7 @@ My Diary is an online journal where users can pen down their thoughts and feelin
 * CSS
 
 ### GitHub Pages link for UI
-[myDiary/UI link]( https://github.com/DeliceLydia/myDairy.git)
+[myDiary/UI link]( https://delicelydia.github.io/myDairy/UI/html/)
 
 ---------------------------------------------------------------------
 
