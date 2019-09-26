@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/DeliceLydia/myDairy.svg?branch=develop)](https://travis-ci.org/DeliceLydia/myDairy) [![Coverage Status](https://coveralls.io/repos/github/DeliceLydia/myDairy/badge.svg?branch=develop)](https://coveralls.io/github/DeliceLydia/myDairy?branch=develop) [![Maintainability](https://api.codeclimate.com/v1/badges/4d769ba85fe19b31200f/maintainability)](https://codeclimate.com/github/DeliceLydia/myDairy/maintainability)
+[![Build Status](https://travis-ci.org/DeliceLydia/myDairy.svg?branch=develop)](https://travis-ci.org/DeliceLydia/myDairy) [![Coverage Status](https://coveralls.io/repos/github/DeliceLydia/myDairy/badge.svg?branch=ch-testing-%23168659186)](https://coveralls.io/github/DeliceLydia/myDairy?branch=ch-testing-%23168659186) [![Maintainability](https://api.codeclimate.com/v1/badges/4d769ba85fe19b31200f/maintainability)](https://codeclimate.com/github/DeliceLydia/myDairy/maintainability)
 
 # myDairy
 My Diary is an online journal where users can pen down their thoughts and feelings.
