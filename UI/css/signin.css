@@ -7,9 +7,9 @@ body {
     width: 100%;
 }
 .login {
-    margin: 60px auto;
+    margin: 170px auto; 
     width: 300px; 
-    padding: 80px 30px;
+    padding: 100px 30px;
     background: rgb(230, 226, 226);
     border: 1px solid #c4c4c4;
 } 
@@ -36,6 +36,9 @@ body {
     cursor: pointer;
     outline:0;
 }
+.signout{
+    padding-top: 40px;
+}
 .signup-lost {
     text-align:left;
     margin-bottom:0px;
@@ -43,9 +46,10 @@ body {
     
 }
 .signup {
-    margin: 20px auto;
+    margin: 150px auto;
     width: 320px;
     padding: 30px 25px;
+    padding-left: 41px;
     background: rgb(230, 226, 226);
     border: 1px solid #c4c4c4;
 }

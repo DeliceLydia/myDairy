@@ -1,5 +1,6 @@
 body {
-    background-image: url(../assets/pen.webp);
+   
+   background-image: url(../assets/pen.webp);
    background-repeat: no-repeat;
    background-size: cover;
    padding: 0;
@@ -12,6 +13,19 @@ body {
     padding-left: 10px;
     font-size: 170%;
     padding-bottom: 5px;
+    
+}
+
+.ViewContent{
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  padding-left: 80px;
+  padding-right: 20px;
+ 
 }
 .logo a{
     float: left;
@@ -32,65 +46,86 @@ body {
         margin: 0;
       }
     .sidebar{
-        width: 50%;
+        width: 80%;
         background: rgb(230, 226, 226) ;
         height: 55vh;
         margin-top: 40px;
+        padding-left: 50px;
+        display: flex;
+        margin-left: 20px;
       }
     #inbox{
         width: 100%;
-        margin: auto;
-      }
+        margin: 0 auto;
+        }
     }
-.sidebar {
-   position: absolute;
-   width: 13%;
-   height: 74vh;
-   background:  rgb(230, 226, 226);
-   padding-right: 20px;
-   margin-top: 53px;
-   padding: 10px;
-   left:0;
-   transition: 2s;
-    
+.sidebar ul li{
+ display: inline;
+ color: aliceblue;
+ font-size: 20px;
 }
 .sidebar ul li a{
-  list-style: none;
-  color: black;
-  font-size: 20px;
-  padding: 5px;
-  margin-top: 10px;
+  color:rgb(8, 8, 8);
+  font-size: 30px;
   cursor: pointer;
   text-decoration: none;
-  width: 90%;
+  margin-left: 20px;
+  margin-right: 20px;
+  float: right;
+  
+}
+
+.sidebar ul li a:hover{
+  color: brown;
+}
+
+.sidebar ul li {
+  list-style: none;
+  padding: 10px 0px;
+}
+thead{
+  font-weight: 700;
+  font-size: 15pt;
+  text-transform: uppercase;
+}
+td{
+  width: 5%; 
+  font-size: 20px;
+  padding: 10px;
+  color: black;
+  border-bottom: 1px rgba(29, 26, 26, 0.4) solid; 
+  cursor: pointer;
+}
+td a {
+  text-decoration: none; 
+}
+.inbox{
+  margin: 100px 20px 0 0;
+  height: 76vh;
+  width: 80%;
+  border-radius: 4px;
+  background-color: rgb(230, 226, 226);
+  margin-left: 180px;
+  margin-right: 120px;
+  display: flex;
 }
 #inbox{
     margin: 53px 20px 0 0;
-    height: 77vh;
-    width: 82%;
+    height: 76vh;
+    width: 80%;
     border-radius: 4px;
     background-color: rgb(230, 226, 226);
-    float: right;
-    overflow: auto;
+    padding-left: 150px;
+    display: flex;
   }
-thead{
-    font-weight: 700;
-    font-size: 15pt;
-    text-transform: uppercase;
-  }
-td{
-    width: 10%; 
-    font-size: 20px;
-    padding: 10px;
-    color: black;
-    border-bottom: 1px rgba(29, 26, 26, 0.4) solid;
-    cursor: pointer;
-}
-td a {
-    text-decoration: none; 
+.paragraph {
+  text-align: center;
+  max-width: 50%;
+  font-size: 21px;
 }
 .modify {
-    text-align: right;
+    text-align : left;
+    margin-top: 10%;
 }
 .modify a{
         padding: 2%;
@@ -105,14 +140,13 @@ td a {
 }
 /* New entry */
 #message form {
-  margin: 53px 30px 0 0;
-  height: 77vh;
+  margin: 53px 240px  0 0;
+  height: 82vh;
   width: 65%;
   border-radius: 4px;
   background-color: rgb(230, 226, 226);
   float: right;
-  overflow: auto;
-  padding-left: 16%;
+  padding-left: 6%;
 }
 .form-input{
   width: 90%;
@@ -134,14 +168,20 @@ td a {
   resize: none;
 }
 .btn-success{
-  background: rgb(187, 133, 112);
-  width: 20%;
-  border-radius: 5px;
-  height: 27px;
-  font-size: 15pt;
-  font-weight: 700;
-  outline: none;
-  border: solid 2px rgb(187, 133, 112);
-  float: right;
-  margin-right: 50px;
+  float: left;
+  margin: 20px 40px;
+  margin-left: 0.9px;
+  width: 10%;
+  height: 5%;
+  border-style: inherit;
+  border-width: 5px;
+  background-color: whitesmoke;
+  color: brown;
+  text-transform: uppercase; 
+  font-size: 80%;
+  letter-spacing: 2px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  
 }
