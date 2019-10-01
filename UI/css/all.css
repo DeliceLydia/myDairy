@@ -20,11 +20,10 @@ body {
   display: flex;
   position: absolute;
   top: 50%;
-  left: 55%;
+  left: 48%;
   transform: translate(-50%, -50%);
-  width: 60%;
-  padding-left: 80px;
-  padding-right: 20px;
+  margin-left: 1px;
+  width: 45%;
  
 }
 .logo a{
@@ -120,8 +119,9 @@ td a {
   }
 .paragraph {
   text-align: center;
-  max-width: 50%;
+  max-width:78%;
   font-size: 21px;
+  text-align: end;
 }
 .modify {
     text-align : left;
