@@ -11,7 +11,7 @@ class entry {
     else { return responseMessage.successWithData(res, 200, 'entries found successfully', entries); }
   }
   static getOneEntry(req, res) {
-    const entry = entries.find(h => h.entryId === parseInt(req.params.entryId, 10));
+    const entry = entries.find(h => h.entryId === parseInt(req.params.entryId));
     if (!entry) { return responseMessage.errorMessage(res, 404, 'entry not found') }
     else { return responseMessage.successWithData(res, 200, 'found entry successfully', entry); }
   }
@@ -20,7 +20,7 @@ class entry {
     const { error } = validateEntry.validation(req.body);
     if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
 
-    const entryId = parseInt(entries.length + 1, 10);
+    const entryId = entries.length + 1;
     const { title, newEntry } = req.body;
     const entry = {
       entryId,
@@ -35,7 +35,7 @@ class entry {
 
     const { error } = modifyEntry.validation(req.body);
     if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
-    const checkEntryId = entries.find(g => g.entryId === parseInt(req.params.entryId, 10));
+    const checkEntryId = entries.find(g => g.entryId === parseInt(req.params.entryId));
 
     if (!checkEntryId) {
       return responseMessage.errorMessage(res, 404, 'entry with that entryId not found');
@@ -50,7 +50,7 @@ class entry {
     }
   }
   static deleteEntry(req, res) {
-    const deleteOne = entries.find(d => d.entryId === parseInt(req.params.entryId, 10));
+    const deleteOne = entries.find(d => d.entryId === parseInt(req.params.entryId));
     if (!deleteOne) { return responseMessage.errorMessage(res, 404, 'entry with that ID is not found') }
 
     if (deleteOne) {
