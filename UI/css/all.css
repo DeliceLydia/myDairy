@@ -99,13 +99,10 @@ td a {
   text-decoration: none; 
 }
 .inbox{
-  margin: 100px 20px 0 0;
+  margin: 100px 25%;
   height: 76vh;
-  width: 80%;
-  border-radius: 4px;
+  width: 50%;
   background-color: rgb(230, 226, 226);
-  margin-left: 180px;
-  margin-right: 120px;
   display: flex;
 }
 #inbox{
@@ -118,7 +115,6 @@ td a {
     display: flex;
   }
 .paragraph {
-  text-align: center;
   max-width:78%;
   font-size: 21px;
   text-align: end;
