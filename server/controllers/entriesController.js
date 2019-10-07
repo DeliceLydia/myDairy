@@ -1,4 +1,3 @@
-import entries from '../models/entriesModel';
 import validateEntry from '../helpers/entryValidation';
 import modifyEntry from '../helpers/modifyValidation';
 import responseMessage from '../helpers/responses';
@@ -42,6 +41,7 @@ class entry {
     }
 
     if (checkEntryId) {
+      title.entry = req.body.entry;
       checkEntryId.entry = req.body.entry;
       return responseMessage.successWithData(res, 200, 'entry updated successfully',{
         entryId: checkEntryId.entryId,
