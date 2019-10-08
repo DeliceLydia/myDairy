@@ -1,4 +1,4 @@
-import validateEntry from '../helpers/entryValidation';
+import validateEntry from '../helpers/userValidations';
 import modifyEntry from '../helpers/modifyValidation';
 import responseMessage from '../helpers/responses';
 import moment from 'moment';

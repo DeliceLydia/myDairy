@@ -5,10 +5,8 @@ const validateUsers = {
         const schema = {
             title : joi.string().required(),
             newEntry : joi.string().required()
-
         };
         return joi.validate(user,schema);
     }
 }
-
 export default validateUsers;
