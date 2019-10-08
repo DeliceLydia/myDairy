@@ -5,10 +5,11 @@ const responseMessage = {
             error
         })
     },
-    successWithData(res, statusCode, message,data) {
+    successWithData(res, statusCode, message,token, data) {
         return res.status(statusCode).json({
             statusCode,
             message,
+            token,
             data,
         })
     },

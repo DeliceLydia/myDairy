@@ -5,11 +5,10 @@ export const createTables = () => {
     const users = `
     CREATE TABLE IF NOT EXISTS users(
         id SERIAL PRIMARY KEY,
-        first_name VARCHAR(20) NOT NULL,
-        last_name VARCHAR(20) NOT NULL,
+        firstName VARCHAR(20) NOT NULL,
+        lastName VARCHAR(20) NOT NULL,
         email VARCHAR(30) UNIQUE NOT NULL,
-        password VARCHAR(300) NOT NULL,
-        confirm_password VARCHAR(300) NOT NULL
+        password VARCHAR(300) NOT NULL
     );`
     const entries = `
     CREATE TABLE IF NOT EXISTS entries(
