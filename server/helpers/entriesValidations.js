@@ -4,7 +4,7 @@ const validateUsers = {
     validation(user){
         const schema = {
             title : joi.string().required(),
-            newEntry : joi.string().required()
+            entry : joi.string().required()
         };
         return joi.validate(user,schema);
     }

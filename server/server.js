@@ -1,3 +1,4 @@
+import '@babel/plugin-transform-regenerator';
 import '@babel/polyfill';
 import app from './app';
 import dotenv from 'dotenv';

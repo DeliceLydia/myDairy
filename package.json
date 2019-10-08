@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon --exec babel-node ./server/server.js",
-    "test": "cd server &&  nyc --reporter=html --reporter=text mocha --require @babel/register tests/* --exit",
+    "test": "cd server &&  nyc --reporter=html --reporter=text mocha --timeout 5000 --require @babel/polyfill --require @babel/register tests/* --exit",
     "tables": "node --require @babel/register ./server/database/db  createTables",
     "drop": "node --require @babel/register ./server/database/db dropTables",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
@@ -27,6 +27,7 @@
     "@babel/cli": "^7.6.0",
     "@babel/core": "^7.6.0",
     "@babel/node": "^7.6.1",
+    "@babel/plugin-transform-regenerator": "^7.4.5",
     "@babel/polyfill": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
