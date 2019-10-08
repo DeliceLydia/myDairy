@@ -32,5 +32,29 @@ class users{
           const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '24hrs' });
           return responseMessage.successWithData(res, 201, 'user added successfully',token, newUser)
         }
+    static async signin(req, res){
+      const { error } = validateSignin.validation(req.body);
+      if (error) {
+          return responseMessage.errorMessage(res, 400, error.details[0].message);
+      }
+      const values = req.body.email.trim();
+      const {rows} = await pool.query(sql.findUser, [values]);
+      if(!rows[0]) {
+        return responseMessage.errorMessage(res, 404, 'incorrect email or password');
+      }
+      const password = bcrypt.compareSync(req.body.password.trim(), rows[0].password);
+      if(!password) {
+        return responseMessage.errorMessage(res, 404, 'incorrect email or password');
+      }
+      const { id,firstName, lastName, email} = rows[0];
+      const payload = {
+        id,
+        firstName,
+        lastName,
+        email,
+      };
+      const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '24hrs' });
+      return responseMessage.successWithData(res, 200, 'user founded successfully', token, {email});
+    }
 }
 export default users;

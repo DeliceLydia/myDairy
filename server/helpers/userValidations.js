@@ -11,7 +11,7 @@ const validateSignup = {
         return joi.validate(entry, schema);
     }
 }
-const ValidateSignin = {
+const validateSignin = {
     validation(returningUser) {
         const schema = {
             email: joi.string().email().required(),
@@ -20,4 +20,4 @@ const ValidateSignin = {
         return joi.validate(returningUser, schema);
     }
 }
-export { validateSignup, ValidateSignin };
+export { validateSignup, validateSignin };
