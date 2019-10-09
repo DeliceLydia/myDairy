@@ -1,16 +1,20 @@
+import dotenv from 'dotenv';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
+import jwt from 'jsonwebtoken';
 import app from '../app'
 
 
 const { expect } = chai;
 
 chai.use(chaiHttp);
+dotenv.config();
 
 const myTestEntry = {
     title: 'Lydia learns tests',
-    newEntry: 'This is how I learned my tests'
+    entry: 'This is how I learned my tests'
 }
+
 
 describe('Entries tests', () => {
     it('server should be able to run', (done)=>{
@@ -25,8 +29,16 @@ describe('Entries tests', () => {
         })
     })
     it('Should get all entries', (done) => {
+        const payload = {
+            id : 2,
+            firstName: 'lala',
+            lastName: 'isaro',
+            email: 'isaro@gmail.com'
+        };
+        const token = jwt.sign(payload, 'ingabire', { expiresIn: '24hrs' });
         chai.request(app)
         .get('/api/v1/entries')
+        .set('Authorization', token)
         .end((err, res) => {
             expect(res.status).to.be.eql(200, 'Response status is wrong');
             done();
@@ -34,8 +46,16 @@ describe('Entries tests', () => {
     });
 
     it('Should add an entry', (done) => {
+        const payload = {
+            id : 2,
+            firstName: 'lala',
+            lastName: 'isaro',
+            email: 'isaro@gmail.com'
+        };
+        const token = jwt.sign(payload, 'ingabire', { expiresIn: '24hrs' });
         chai.request(app)
         .post('/api/v1/entries')
+        .set('Authorization', token)
         .send(myTestEntry)
         .end((err, res) => {
             expect(res.status).to.be.eql(201, 'Response status is not equal to created');
@@ -48,7 +68,7 @@ describe('Entries tests', () => {
     it('should not post when there is a validation mistake', (done) =>{
         const myTestEntry = {
             title: 10,
-            newEntry: 'This is how I learned my tests'
+            entry: 'This is how I learned my tests'
         } 
         chai.request(app)
         .post('/api/v1/entries')
@@ -78,7 +98,7 @@ describe('Entries tests', () => {
    })
    it('should be able to modify an entry', (done) => {
     const myTestEntry = {
-        newEntry: 'Testing is abit easier'
+        entry: 'Testing is abit easier'
     }
       chai.request(app)
       .put('/api/v1/entries/1')
@@ -94,7 +114,7 @@ describe('Entries tests', () => {
     })
     it('should not be able to modify an entry when id doesn\'t exist',(done) => {
         const myTestEntry = {
-            newEntry: 'Testing is abit easier'
+            entry: 'Testing is abit easier'
         }
         chai.request(app)
         .put('/api/v1/entries/9')
