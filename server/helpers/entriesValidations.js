@@ -1,12 +1,12 @@
 import joi from 'joi';
 
-const validateUsers = {
-    validation(user){
+const validateEntry = {
+    validation(entry){
         const schema = {
             title : joi.string().required(),
-            newEntry : joi.string().required()
+            entry : joi.string().required()
         };
-        return joi.validate(user,schema);
+        return joi.validate(entry,schema);
     }
 }
-export default validateUsers;
+export default validateEntry;

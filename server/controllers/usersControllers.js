@@ -28,9 +28,9 @@ class users{
             };
           const result = await pool.query(sql.addUser,[newUser.firstName, newUser.lastName, newUser.email, newUser.password]);
           const {id, firstName, lastName, email,} = result.rows[0];
-          const payload ={id, firstName, lastName, email};
-          const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '24hrs' });
-          return responseMessage.successWithData(res, 201, 'user added successfully',token, newUser)
+          const payload ={id, firstName, lastName, email}
+          const token = jwt.sign(payload, process.env.SECRET_KEY, {expiresIn: '1year'});
+          return responseMessage.successWithData(res, 201, 'user added successfully',token, {firstName, lastName, email})
         }
     static async signin(req, res){
       const { error } = validateSignin.validation(req.body);
@@ -53,7 +53,7 @@ class users{
         lastName,
         email,
       };
-      const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '24hrs' });
+      const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '1year' });
       return responseMessage.successWithData(res, 200, 'user founded successfully', token, {email});
     }
 }
