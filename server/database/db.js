@@ -22,6 +22,7 @@ export const createTables = () => {
     pool.query(queries).then((res) => {
       console.log(res);
       pool.end();
+      return res;
     })
     .catch((err) => {
       console.log(err);
@@ -37,6 +38,7 @@ export const dropTables = () => {
   const Queries = `${drop}`;
   pool.query(Queries).then((res) => {
       pool.end();
+      return res;
   })
       .catch((err) => {
           pool.end();

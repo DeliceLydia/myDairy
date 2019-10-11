@@ -1,20 +1,36 @@
 import dotenv from 'dotenv';
 import chai from 'chai';
 import chaiHttp from 'chai-http';
-import jwt from 'jsonwebtoken';
-import app from '../app'
+import app from '../app';
 
 dotenv.config();
-const { expect } = chai;
-
 chai.use(chaiHttp);
+const { expect } = chai;
 
 const myTestEntry = {
     title: 'Lydia learns tests',
-    newEntry: 'This is how I learned my tests'
+    entry: 'This is how I learned my tests'
 }
 
+const user = {
+    firstName : "ganza",
+    lastName : "arsene",
+    email : "ganza@gmail.com",
+    password: "123456"
+ };
+
+
 describe('Entries tests', () => {
+    let token = '';
+    before(() => {
+        chai.request(app)
+            .post('/api/v1/auth/signup')
+            .send(user)
+            .end((err, res) => {
+                console.log(res.body);
+                token = res.body.token;
+            });
+        });
     it('server should be able to run', (done)=>{
         chai.request(app)
         .get('/')
@@ -38,9 +54,9 @@ describe('Entries tests', () => {
     //       .send(user)
     //       .end((err, res) => {
     //         expect(res.status).to.be.eql(201, 'Response status is not equal to created');
-    //         // expect(res.body).to.be.an('Object');
-    //         // expect(res.body.message).not.to.be.empty;
-    //         // expect(res.body.message).to.equals('user added successfully');
+    //         expect(res.body).to.be.an('Object');
+    //         expect(res.body.message).not.to.be.empty;
+    //         expect(res.body.message).to.equals('user added successfully');
     //         done();
     //       });
     //   });
@@ -53,18 +69,19 @@ describe('Entries tests', () => {
     //     });
     // });
 
-    // it('Should add an entry', (done) => {
-    //     chai.request(app)
-    //     .post('/api/v1/entries')
-    //     .send(myTestEntry)
-    //     .end((err, res) => {
-    //         expect(res.status).to.be.eql(201, 'Response status is not equal to created');
-    //         expect(res.body).to.be.an('Object');
-    //         expect(res.body.message).not.to.be.empty;
-    //         expect(res.body.message).to.equals('diary entry successfully posted');
-    //         done();
-    //     });
-    // });
+    it('Should add an entry', (done) => {
+        chai.request(app)
+        .post('/api/v1/entries')
+        .set('authorization', token)
+        .send(myTestEntry)
+        .end((err, res) => {
+            // expect(res.status).to.be.eql(201);
+            expect(res.body).to.be.an('Object');
+            expect(res.body.message).not.to.be.empty;
+            expect(res.body.message).to.equals('entry posted successfully');
+            done();
+        });
+    });
     it('should not post when there is a validation mistake', (done) =>{
         const myTestEntry = {
             title: 10,

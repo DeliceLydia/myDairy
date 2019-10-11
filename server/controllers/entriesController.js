@@ -1,5 +1,5 @@
 import validateEntry from '../helpers/entriesValidations';
-// import modifyEntry from '../helpers/modifyValidation';
+import modifyEntry from '../helpers/modifyValidation';
 import responseMessage from '../helpers/responses';
 import moment from 'moment';
 import sql from '../helpers/query';
@@ -31,26 +31,22 @@ class entry {
     const result = await pool.query(sql.postEntry, [date, title, entry]);
     return responseMessage.successUser(res, 'entry posted successfully', 201, {date, title, entry});
 }
-  // static modifyEntry(req, res) {
+  static async modifyEntry(req, res) {
 
-  //   const { error } = modifyEntry.validation(req.body);
-  //   if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
-  //   const checkEntryId = entries.find(g => g.entryId === parseInt(req.params.entryId));
-
-  //   if (!checkEntryId) {
-  //     return responseMessage.errorMessage(res, 404, 'entry with that entryId not found');
-  //   }
-
-  //   if (checkEntryId) {
-  //     title.entry = req.body.entry;
-  //     checkEntryId.entry = req.body.entry;
-  //     return responseMessage.successWithData(res, 200, 'entry updated successfully',{
-  //       entryId: checkEntryId.entryId,
-  //       created_on: moment().format('LL'), newEntry: checkEntryId.newEntry
-  //     })
-  //   }
-  // }
-  
-  // }
-}
+    const { error } = modifyEntry.validation(req.body);
+    if (error) { return responseMessage.errorMessage(res, 400, error.details[0].message); }
+    const entryId = parseInt(req.params.id);
+    const checkEntryId = await pool.query(sql.findEntrybyId, [entryId]);
+    if (checkEntryId.rowCount===0) {
+      return responseMessage.errorMessage(res, 404, 'entry with that Id not found');
+    }
+    await pool.query(sql.updateEntry, [req.body.entry, entryId]);
+   return responseMessage.successWithData(res, 200, 'entry updated successfully',{
+        id: checkEntryId.rows[0].id,
+        date: checkEntryId.rows[0].date,
+        title: checkEntryId.rows[0].title,
+        entry : req.body.entry
+      })
+    }
+  }
 export default entry;

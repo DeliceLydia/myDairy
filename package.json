@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "nodemon --exec babel-node ./server/server.js",
-    "test": "cd server &&  nyc --reporter=html --reporter=text mocha --timeout 5000 --require @babel/polyfill --require @babel/register tests/* --exit",
+    "test": "npm run drop && npm run tables &&  nyc --reporter=html --reporter=text mocha --timeout 5000 --require @babel/polyfill --require @babel/register server/tests/* --exit",
     "tables": "node --require @babel/register ./server/database/db  createTables",
     "drop": "node --require @babel/register ./server/database/db dropTables",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
