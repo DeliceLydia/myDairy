@@ -41,7 +41,7 @@ class entry {
       return responseMessage.errorMessage(res, 404, 'entry with that Id not found');
     }
     await pool.query(sql.updateEntry, [req.body.entry, entryId]);
-   return responseMessage.successWithData(res, 200, 'entry updated successfully',{
+   return responseMessage.successUser(res, 'entry updated successfully', 200,{
         id: checkEntryId.rows[0].id,
         date: checkEntryId.rows[0].date,
         title: checkEntryId.rows[0].title,

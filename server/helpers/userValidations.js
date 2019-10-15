@@ -3,8 +3,8 @@ import joi from 'joi';
 const validateSignup = {
     validation(entry) {
         const schema = {
-            firstName: joi.string().trim().required(),
-            lastName: joi.string().trim().required(),
+            firstname: joi.string().trim().required(),
+            lastname: joi.string().trim().required(),
             email: joi.string().email({ minDomainAtoms: 2 }).trim().required(),
             password: joi.string().trim().required(),
         };

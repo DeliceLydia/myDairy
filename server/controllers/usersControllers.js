@@ -21,16 +21,16 @@ class users{
           }
         const hash = bcrypt.hashSync(req.body.password.trim(),10);
           const newUser = {
-              firstName: req.body.firstName,
-              lastName: req.body.lastName,
+              firstname: req.body.firstname,
+              lastname: req.body.lastname,
               email: req.body.email, 
               password: hash
             };
-          const result = await pool.query(sql.addUser,[newUser.firstName, newUser.lastName, newUser.email, newUser.password]);
-          const {id, firstName, lastName, email,} = result.rows[0];
-          const payload ={id, firstName, lastName, email}
+          const result = await pool.query(sql.addUser,[newUser.firstname, newUser.lastname, newUser.email, newUser.password]);
+          const {id, firstname, lastname, email,} = result.rows[0];
+          const payload ={id, firstname, lastname, email}
           const token = jwt.sign(payload, process.env.SECRET_KEY, {expiresIn: '1year'});
-          return responseMessage.successWithData(res, 201, 'user added successfully',token, {firstName, lastName, email})
+          return responseMessage.successWithData(res, 201, 'user added successfully',token, {firstname, lastname, email})
         }
     static async signin(req, res){
       const { error } = validateSignin.validation(req.body);
@@ -46,11 +46,11 @@ class users{
       if(!password) {
         return responseMessage.errorMessage(res, 404, 'incorrect email or password');
       }
-      const { id,firstName, lastName, email} = rows[0];
+      const { id,firstname, lastname, email} = rows[0];
       const payload = {
         id,
-        firstName,
-        lastName,
+        firstname,
+        lastname,
         email,
       };
       const token = jwt.sign(payload, process.env.SECRET_KEY, { expiresIn: '1year' });
