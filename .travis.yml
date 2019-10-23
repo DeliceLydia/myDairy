@@ -9,7 +9,7 @@ before_script:
 services:
   - postgresql
 before_script:
-  - psql -c 'create database db_test;' -U postgres
+  - psql -c 'create database testing;' -U postgres
 
 script:
   - npm test
