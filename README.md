@@ -1,6 +1,7 @@
 [![Build Status](https://travis-ci.org/DeliceLydia/myDairy.svg?branch=develop)](https://travis-ci.org/DeliceLydia/myDairy) [![Coverage Status](https://coveralls.io/repos/github/DeliceLydia/myDairy/badge.svg?branch=ch-testing-%23168659186)](https://coveralls.io/github/DeliceLydia/myDairy?branch=ch-testing-%23168659186) [![Maintainability](https://api.codeclimate.com/v1/badges/4d769ba85fe19b31200f/maintainability)](https://codeclimate.com/github/DeliceLydia/myDairy/maintainability)
 
 # myDairy
+
 My Diary is an online journal where users can pen down their thoughts and feelings.
 
 ## UI
@@ -57,14 +58,17 @@ nyc
 coveralls
 ```
 ### Deployment
+
 ```
 Heroku
 ```
-### Heroku link Example
+### Live Demo
+
 [myDiary heroku link](https://safe-citadel-00027.herokuapp.com/)
 
 
 ## Installing
+
 The installation of this application is fairly straightforward, After cloning this repository to your local machine,CD into the package folder using your terminal and run the following
 
 ```
@@ -78,6 +82,7 @@ It will install the node_modules which will help you run the project on your loc
 > npm run dev
 ```
 ## Run the test
+
 ```
 > npm test
 ```
