@@ -1,32 +1,36 @@
 body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    font-family: Intel;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 1em;
-    color: #f5f6fa
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  font-family: Intel;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1em;
+  color: #f5f6fa
 }
 
 main {
-    background: url(../assets/dr.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 70vh;
+  background: url(../assets/dr.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 70vh;
 }
 
 header a {
-    color: #2c3e50;
+  color: #2c3e50;
 }
 
-nav a:hover,
+header a:hover,
 .logo span {
-    color: #c0392b;
+  color: #c0392b;
+}
+
+.logo span {
+  font-size: 30px;
 }
 
 .info {
-    height: 60vh;
+  height: 60vh;
 }
 
 .dairy-head {
@@ -37,16 +41,30 @@ nav a:hover,
 }
 
 .info-text {
-    max-width: 550px;
-    font-size: 18px;
-    margin-bottom: 30px;
+  max-width: 550px;
+  font-size: 16px;
+  margin-bottom: 30px;
 }
 
 .btn-color {
-    background-color: #c0392b;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  padding: 10px 28px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  background-color: #c0392b;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+.btn-color:hover {
+  background-color: brown;
 }
 
 .btn-color a {
-    color: #fff;
-    text-decoration: none;
+  color: #fff;
+  text-decoration: none;
 }
