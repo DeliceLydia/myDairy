@@ -16,6 +16,15 @@ main {
     height: 70vh;
 }
 
+a {
+    color: #3867d6;
+}
+
+nav a:hover {
+    color: #2d98da;
+    text-decoration: underline;
+}
+
 /*
 .logo {
     position: relative;
